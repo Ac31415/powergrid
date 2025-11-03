@@ -1,0 +1,387 @@
+conda activate PowerGridGymEnv
+wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % conda activate PowerGridGymEnv
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % ls -al
+total 80
+drwxr-xr-x@  18 wen-chungcheng  staff    576 Nov  3 05:06 .
+drwxr-xr-x+ 345 wen-chungcheng  staff  11040 Nov  3 05:07 ..
+drwxr-xr-x@  13 wen-chungcheng  staff    416 Nov  3 05:07 .git
+-rw-r--r--@   1 wen-chungcheng  staff   2047 Nov  3 05:06 .gitignore
+-rwxr-xr-x@   1 wen-chungcheng  staff   1066 Nov  3 05:06 LICENSE.txt
+-rw-r--r--@   1 wen-chungcheng  staff    225 Nov  3 05:06 MANIFEST.in
+-rw-r--r--@   1 wen-chungcheng  staff   3171 Nov  3 05:06 README.md
+drwxr-xr-x@  10 wen-chungcheng  staff    320 Nov  3 05:06 data
+drwxr-xr-x@   4 wen-chungcheng  staff    128 Nov  3 05:06 deprecated
+drwxr-xr-x@  10 wen-chungcheng  staff    320 Nov  3 05:06 docs
+drwxr-xr-x@   8 wen-chungcheng  staff    256 Nov  3 05:06 examples
+drwxr-xr-x@  13 wen-chungcheng  staff    416 Nov  3 05:06 powergrid
+-rw-r--r--@   1 wen-chungcheng  staff   1572 Nov  3 05:06 pyproject.toml
+-rw-r--r--@   1 wen-chungcheng  staff    633 Nov  3 05:06 requirements.txt
+-rwxr-xr-x@   1 wen-chungcheng  staff   2512 Nov  3 05:06 test_train_mappo.sh
+-rw-r--r--@   1 wen-chungcheng  staff   3336 Nov  3 05:06 test_training.py
+-rw-r--r--@   1 wen-chungcheng  staff   6250 Nov  3 05:06 test_training_simple.py
+drwxr-xr-x@  10 wen-chungcheng  staff    320 Nov  3 05:06 tests
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % ls -al powergrid/
+total 32
+drwxr-xr-x@ 13 wen-chungcheng  staff    416 Nov  3 05:06 .
+drwxr-xr-x@ 18 wen-chungcheng  staff    576 Nov  3 05:06 ..
+-rw-r--r--@  1 wen-chungcheng  staff      0 Nov  3 05:06 __init__.py
+drwxr-xr-x@  6 wen-chungcheng  staff    192 Nov  3 05:06 agents
+-rw-r--r--@  1 wen-chungcheng  staff  12447 Nov  3 05:06 base_env.py
+drwxr-xr-x@ 11 wen-chungcheng  staff    352 Nov  3 05:06 core
+drwxr-xr-x@  3 wen-chungcheng  staff     96 Nov  3 05:06 data
+drwxr-xr-x@  9 wen-chungcheng  staff    288 Nov  3 05:06 devices
+drwxr-xr-x@  6 wen-chungcheng  staff    192 Nov  3 05:06 envs
+drwxr-xr-x@ 11 wen-chungcheng  staff    352 Nov  3 05:06 networks
+drwxr-xr-x@  5 wen-chungcheng  staff    160 Nov  3 05:06 optimization
+drwxr-xr-x@  8 wen-chungcheng  staff    256 Nov  3 05:06 powergrid.egg-info
+drwxr-xr-x@  6 wen-chungcheng  staff    192 Nov  3 05:06 utils
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % pip install -e ".[dev]"
+Obtaining file:///Users/wen-chungcheng/powergrid
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Collecting gymnasium>=1.0.0 (from powergrid==0.0.2)
+  Using cached gymnasium-1.2.1-py3-none-any.whl.metadata (10.0 kB)
+Collecting pandapower>=2.14.0 (from powergrid==0.0.2)
+  Downloading pandapower-3.2.1-py3-none-any.whl.metadata (8.5 kB)
+Collecting numpy>=1.21.0 (from powergrid==0.0.2)
+  Downloading numpy-2.3.4-cp311-cp311-macosx_14_0_arm64.whl.metadata (62 kB)
+Collecting pandas>=1.3.0 (from powergrid==0.0.2)
+  Downloading pandas-2.3.3-cp311-cp311-macosx_11_0_arm64.whl.metadata (91 kB)
+Collecting pyscipopt>=4.0.0 (from powergrid==0.0.2)
+  Downloading pyscipopt-5.6.0-cp311-cp311-macosx_14_0_arm64.whl.metadata (6.5 kB)
+Collecting matplotlib>=3.5.0 (from powergrid==0.0.2)
+  Downloading matplotlib-3.10.7-cp311-cp311-macosx_11_0_arm64.whl.metadata (11 kB)
+Collecting lxml>=4.9.0 (from powergrid==0.0.2)
+  Downloading lxml-6.0.2-cp311-cp311-macosx_10_9_universal2.whl.metadata (3.6 kB)
+Collecting pytest>=7.0.0 (from powergrid==0.0.2)
+  Using cached pytest-8.4.2-py3-none-any.whl.metadata (7.7 kB)
+Collecting pytest-cov>=4.0.0 (from powergrid==0.0.2)
+  Using cached pytest_cov-7.0.0-py3-none-any.whl.metadata (31 kB)
+Collecting ruff>=0.1.0 (from powergrid==0.0.2)
+  Downloading ruff-0.14.3-py3-none-macosx_11_0_arm64.whl.metadata (25 kB)
+Collecting black>=22.0.0 (from powergrid==0.0.2)
+  Downloading black-25.9.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (83 kB)
+Collecting mypy>=1.0.0 (from powergrid==0.0.2)
+  Downloading mypy-1.18.2-cp311-cp311-macosx_11_0_arm64.whl.metadata (2.2 kB)
+Collecting click>=8.0.0 (from black>=22.0.0->powergrid==0.0.2)
+  Using cached click-8.3.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting mypy-extensions>=0.4.3 (from black>=22.0.0->powergrid==0.0.2)
+  Using cached mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting packaging>=22.0 (from black>=22.0.0->powergrid==0.0.2)
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pathspec>=0.9.0 (from black>=22.0.0->powergrid==0.0.2)
+  Using cached pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+Collecting platformdirs>=2 (from black>=22.0.0->powergrid==0.0.2)
+  Downloading platformdirs-4.5.0-py3-none-any.whl.metadata (12 kB)
+Collecting pytokens>=0.1.10 (from black>=22.0.0->powergrid==0.0.2)
+  Using cached pytokens-0.2.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting cloudpickle>=1.2.0 (from gymnasium>=1.0.0->powergrid==0.0.2)
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting typing-extensions>=4.3.0 (from gymnasium>=1.0.0->powergrid==0.0.2)
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting farama-notifications>=0.0.1 (from gymnasium>=1.0.0->powergrid==0.0.2)
+  Using cached Farama_Notifications-0.0.4-py3-none-any.whl.metadata (558 bytes)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.5.0->powergrid==0.0.2)
+  Using cached contourpy-1.3.3-cp311-cp311-macosx_11_0_arm64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.5.0->powergrid==0.0.2)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib>=3.5.0->powergrid==0.0.2)
+  Downloading fonttools-4.60.1-cp311-cp311-macosx_10_9_universal2.whl.metadata (112 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.5.0->powergrid==0.0.2)
+  Using cached kiwisolver-1.4.9-cp311-cp311-macosx_11_0_arm64.whl.metadata (6.3 kB)
+Collecting pillow>=8 (from matplotlib>=3.5.0->powergrid==0.0.2)
+  Downloading pillow-12.0.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (8.8 kB)
+Collecting pyparsing>=3 (from matplotlib>=3.5.0->powergrid==0.0.2)
+  Using cached pyparsing-3.2.5-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.5.0->powergrid==0.0.2)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting networkx~=3.2 (from pandapower>=2.14.0->powergrid==0.0.2)
+  Using cached networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+Collecting scipy~=1.13 (from pandapower>=2.14.0->powergrid==0.0.2)
+  Downloading scipy-1.16.3-cp311-cp311-macosx_14_0_arm64.whl.metadata (62 kB)
+Collecting tqdm~=4.67 (from pandapower>=2.14.0->powergrid==0.0.2)
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting deepdiff~=8.6 (from pandapower>=2.14.0->powergrid==0.0.2)
+  Downloading deepdiff-8.6.1-py3-none-any.whl.metadata (8.6 kB)
+Collecting geojson~=3.2 (from pandapower>=2.14.0->powergrid==0.0.2)
+  Downloading geojson-3.2.0-py3-none-any.whl.metadata (16 kB)
+Collecting orderly-set<6,>=5.4.1 (from deepdiff~=8.6->pandapower>=2.14.0->powergrid==0.0.2)
+  Downloading orderly_set-5.5.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting pytz>=2020.1 (from pandas>=1.3.0->powergrid==0.0.2)
+  Using cached pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas>=1.3.0->powergrid==0.0.2)
+  Using cached tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting iniconfig>=1 (from pytest>=7.0.0->powergrid==0.0.2)
+  Using cached iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting pluggy<2,>=1.5 (from pytest>=7.0.0->powergrid==0.0.2)
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pygments>=2.7.2 (from pytest>=7.0.0->powergrid==0.0.2)
+  Using cached pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov>=4.0.0->powergrid==0.0.2)
+  Downloading coverage-7.11.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (9.0 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib>=3.5.0->powergrid==0.0.2)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading black-25.9.0-cp311-cp311-macosx_11_0_arm64.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 27.9 MB/s  0:00:00
+Using cached click-8.3.0-py3-none-any.whl (107 kB)
+Using cached gymnasium-1.2.1-py3-none-any.whl (951 kB)
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Using cached Farama_Notifications-0.0.4-py3-none-any.whl (2.5 kB)
+Downloading lxml-6.0.2-cp311-cp311-macosx_10_9_universal2.whl (8.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 57.2 MB/s  0:00:00
+Downloading matplotlib-3.10.7-cp311-cp311-macosx_11_0_arm64.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 34.0 MB/s  0:00:00
+Using cached contourpy-1.3.3-cp311-cp311-macosx_11_0_arm64.whl (270 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.60.1-cp311-cp311-macosx_10_9_universal2.whl (2.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 15.2 MB/s  0:00:00
+Using cached kiwisolver-1.4.9-cp311-cp311-macosx_11_0_arm64.whl (65 kB)
+Downloading mypy-1.18.2-cp311-cp311-macosx_11_0_arm64.whl (11.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.8/11.8 MB 11.8 MB/s  0:00:00
+Using cached mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Downloading numpy-2.3.4-cp311-cp311-macosx_14_0_arm64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 50.8 MB/s  0:00:00
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Downloading pandapower-3.2.1-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 25.6 MB/s  0:00:00
+Downloading deepdiff-8.6.1-py3-none-any.whl (91 kB)
+Downloading geojson-3.2.0-py3-none-any.whl (15 kB)
+Using cached networkx-3.5-py3-none-any.whl (2.0 MB)
+Downloading orderly_set-5.5.0-py3-none-any.whl (13 kB)
+Downloading pandas-2.3.3-cp311-cp311-macosx_11_0_arm64.whl (10.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 52.1 MB/s  0:00:00
+Downloading scipy-1.16.3-cp311-cp311-macosx_14_0_arm64.whl (20.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.9/20.9 MB 38.2 MB/s  0:00:00
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Using cached pathspec-0.12.1-py3-none-any.whl (31 kB)
+Downloading pillow-12.0.0-cp311-cp311-macosx_11_0_arm64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 43.0 MB/s  0:00:00
+Downloading platformdirs-4.5.0-py3-none-any.whl (18 kB)
+Using cached pyparsing-3.2.5-py3-none-any.whl (113 kB)
+Downloading pyscipopt-5.6.0-cp311-cp311-macosx_14_0_arm64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 22.7 MB/s  0:00:00
+Using cached pytest-8.4.2-py3-none-any.whl (365 kB)
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Using cached pygments-2.19.2-py3-none-any.whl (1.2 MB)
+Using cached pytest_cov-7.0.0-py3-none-any.whl (22 kB)
+Downloading coverage-7.11.0-cp311-cp311-macosx_11_0_arm64.whl (216 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached pytokens-0.2.0-py3-none-any.whl (12 kB)
+Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Downloading ruff-0.14.3-py3-none-macosx_11_0_arm64.whl (11.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.9/11.9 MB 47.3 MB/s  0:00:00
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Building wheels for collected packages: powergrid
+  Building editable for powergrid (pyproject.toml) ... done
+  Created wheel for powergrid: filename=powergrid-0.0.2-0.editable-py3-none-any.whl size=5713 sha256=4bd31b7322686ebe1eed078e5a1db05e074cf4c08ac5a3c5a0998f20769f608a
+  Stored in directory: /private/var/folders/5d/lflhdvkn3sl5sfbzfhmv0v140000gn/T/pip-ephem-wheel-cache-uww43z6h/wheels/7c/1c/c4/ae1f42044d7489f5453a53966d5025a9be6f37f853ef53f35e
+Successfully built powergrid
+Installing collected packages: pytz, farama-notifications, tzdata, typing-extensions, tqdm, six, ruff, pytokens, pyparsing, pygments, pluggy, platformdirs, pillow, pathspec, packaging, orderly-set, numpy, networkx, mypy-extensions, lxml, kiwisolver, iniconfig, geojson, fonttools, cycler, coverage, cloudpickle, click, scipy, python-dateutil, pytest, pyscipopt, mypy, gymnasium, deepdiff, contourpy, black, pytest-cov, pandas, matplotlib, pandapower, powergrid
+Successfully installed black-25.9.0 click-8.3.0 cloudpickle-3.1.2 contourpy-1.3.3 coverage-7.11.0 cycler-0.12.1 deepdiff-8.6.1 farama-notifications-0.0.4 fonttools-4.60.1 geojson-3.2.0 gymnasium-1.2.1 iniconfig-2.3.0 kiwisolver-1.4.9 lxml-6.0.2 matplotlib-3.10.7 mypy-1.18.2 mypy-extensions-1.1.0 networkx-3.5 numpy-2.3.4 orderly-set-5.5.0 packaging-25.0 pandapower-3.2.1 pandas-2.3.3 pathspec-0.12.1 pillow-12.0.0 platformdirs-4.5.0 pluggy-1.6.0 powergrid-0.0.2 pygments-2.19.2 pyparsing-3.2.5 pyscipopt-5.6.0 pytest-8.4.2 pytest-cov-7.0.0 python-dateutil-2.9.0.post0 pytokens-0.2.0 pytz-2025.2 ruff-0.14.3 scipy-1.16.3 six-1.17.0 tqdm-4.67.1 typing-extensions-4.15.0 tzdata-2025.2
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py 
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 4, in <module>
+    env = IEEE13Env({"episode_length": 24, "train": True})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/base_env.py", line 68, in __init__
+    self._build_net()
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 30, in _build_net
+    ess1 = ESS('ESS1', bus='Bus 645',
+           ^^^
+NameError: name 'ESS' is not defined
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 1, in <module>
+    from powergrid.envs.single_agent.ieee13_mg import IEEE13Env
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 10, in <module>
+    from powergrid.devices import *
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/__init__.py", line 3, in <module>
+    from .storage import ESS
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/storage.py", line 5, in <module>
+    from ..agents.device_agent import DeviceAgent
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 14, in <module>
+    from powergrid.core.actions import Action
+ModuleNotFoundError: No module named 'powergrid.core.actions'
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 1, in <module>
+    from powergrid.envs.single_agent.ieee13_mg import IEEE13Env
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 10, in <module>
+    from powergrid.devices import *
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/__init__.py", line 3, in <module>
+    from .storage import ESS
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/storage.py", line 5, in <module>
+    from ..agents.device_agent import DeviceAgent
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 17, in <module>
+    from powergrid.core.state import DeviceState
+  File "/Users/wen-chungcheng/powergrid/powergrid/core/state.py", line 199
+    if hasattr(cls_, "
+                     ^
+SyntaxError: unterminated string literal (detected at line 199)
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 1, in <module>
+    from powergrid.envs.single_agent.ieee13_mg import IEEE13Env
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 10, in <module>
+    from powergrid.devices import *
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/__init__.py", line 3, in <module>
+    from .storage import ESS
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/storage.py", line 8, in <module>
+    from ..core.providers.storage import StorageBlock
+ModuleNotFoundError: No module named 'powergrid.core.providers'
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 1, in <module>
+    from powergrid.envs.single_agent.ieee13_mg import IEEE13Env
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 10, in <module>
+    from powergrid.devices import *
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/__init__.py", line 7, in <module>
+    from .compensation import StaticVarCompensator, StatCom
+ImportError: cannot import name 'StaticVarCompensator' from 'powergrid.devices.compensation' (/Users/wen-chungcheng/powergrid/powergrid/devices/compensation.py)
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 4, in <module>
+    env = IEEE13Env({"episode_length": 24, "train": True})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/base_env.py", line 68, in __init__
+    self._build_net()
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 30, in _build_net
+    ess1 = ESS('ESS1', bus='Bus 645',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/storage.py", line 64, in __init__
+    super().__init__(
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 69, in __init__
+    observation_space=self._get_observation_space(),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 134, in _get_observation_space
+    shape=self.state.as_vector().shape,
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/core/state.py", line 232, in as_vector
+    return self.vector()
+           ^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/core/state.py", line 120, in vector
+    for f in self._iter_ready_features():
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/core/state.py", line 263, in __getattr__
+    raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")
+AttributeError: 'DeviceState' object has no attribute '_iter_ready_features'
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 4, in <module>
+    env = IEEE13Env({"episode_length": 24, "train": True})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/base_env.py", line 68, in __init__
+    self._build_net()
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 53, in _build_net
+    grid = Grid("Grid", bus='Bus 650', sn_mva=5, sell_discount=0.9)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/grid.py", line 32, in __init__
+    super().__init__(
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 68, in __init__
+    action_space=self._get_action_space(),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 123, in _get_action_space
+    raise ValueError("Device must have either continuous or discrete actions defined.")
+ValueError: Device must have either continuous or discrete actions defined.
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 4, in <module>
+    env = IEEE13Env({"episode_length": 24, "train": True})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/base_env.py", line 68, in __init__
+    self._build_net()
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 53, in _build_net
+    grid = Grid("Grid", bus='Bus 650', sn_mva=5, sell_discount=0.9)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/grid.py", line 32, in __init__
+    super().__init__(
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 68, in __init__
+    action_space=self._get_action_space(),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 127, in _get_action_space
+    raise ValueError("Device must have either continuous or discrete actions defined.")
+ValueError: Device must have either continuous or discrete actions defined.
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 4, in <module>
+    env = IEEE13Env({"episode_length": 24, "train": True})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/base_env.py", line 68, in __init__
+    self._build_net()
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 57, in _build_net
+    trafos.append((name, Transformer(name=name, sn_mva=sn_mva)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/transformer.py", line 38, in __init__
+    self._last_tap_position = self.state.tap_position
+                              ^^^^^^^^^^
+AttributeError: 'Transformer' object has no attribute 'state'
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 4, in <module>
+    env = IEEE13Env({"episode_length": 24, "train": True})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/base_env.py", line 68, in __init__
+    self._build_net()
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 57, in _build_net
+    trafos.append((name, Transformer(name=name, sn_mva=sn_mva)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/transformer.py", line 39, in __init__
+    super().__init__(
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 68, in __init__
+    action_space=self._get_action_space(),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 127, in _get_action_space
+    raise ValueError("Device must have either continuous or discrete actions defined.")
+ValueError: Device must have either continuous or discrete actions defined.
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+/Users/wen-chungcheng/anaconda3/envs/PowerGridGymEnv/lib/python3.11/site-packages/pandapower/pypower/dSbus_dV.py:34: RuntimeWarning: invalid value encountered in divide
+  diagVnorm = sparse((V / abs(V), (ib, ib)))
+/Users/wen-chungcheng/anaconda3/envs/PowerGridGymEnv/lib/python3.11/site-packages/pandapower/pypower/newtonpf.py:512: MatrixRankWarning: Matrix is exactly singular
+  dx = -1 * spsolve(J, F, permc_spec=permc_spec, use_umfpack=use_umfpack)
+reward= -100.0 converged= False
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 1, in <module>
+    from powergrid.envs.single_agent.ieee13_mg import IEEE13Env
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 10, in <module>
+    from powergrid.devices import *
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/__init__.py", line 3, in <module>
+    from .storage import ESS
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/storage.py", line 5, in <module>
+    from ..agents.device_agent import DeviceAgent
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 17, in <module>
+    from powergrid.core.state import DeviceState
+  File "/Users/wen-chungcheng/powergrid/powergrid/core/state.py", line 113
+    def _iter_ready_features(self) -> Iterable[FeatureProvider]:
+    ^
+IndentationError: expected an indented block after function definition on line 112
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+Traceback (most recent call last):
+  File "/Users/wen-chungcheng/powergrid/quick_start.py", line 4, in <module>
+    env = IEEE13Env({"episode_length": 24, "train": True})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/base_env.py", line 68, in __init__
+    self._build_net()
+  File "/Users/wen-chungcheng/powergrid/powergrid/envs/single_agent/ieee13_mg.py", line 57, in _build_net
+    trafos.append((name, Transformer(name=name, sn_mva=sn_mva)))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/transformer.py", line 39, in __init__
+    super().__init__(
+  File "/Users/wen-chungcheng/powergrid/powergrid/agents/device_agent.py", line 59, in __init__
+    self.set_action_space()
+  File "/Users/wen-chungcheng/powergrid/powergrid/devices/transformer.py", line 56, in set_action_space
+    self.device_config["action_callback"] = True
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Transformer' object has no attribute 'device_config'
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % python quick_start.py
+/Users/wen-chungcheng/anaconda3/envs/PowerGridGymEnv/lib/python3.11/site-packages/pandapower/pypower/dSbus_dV.py:34: RuntimeWarning: invalid value encountered in divide
+  diagVnorm = sparse((V / abs(V), (ib, ib)))
+/Users/wen-chungcheng/anaconda3/envs/PowerGridGymEnv/lib/python3.11/site-packages/pandapower/pypower/newtonpf.py:512: MatrixRankWarning: Matrix is exactly singular
+  dx = -1 * spsolve(J, F, permc_spec=permc_spec, use_umfpack=use_umfpack)
+reward= -100.0 converged= False
+(PowerGridGymEnv) wen-chungcheng@Wen-Chungs-MacBook-Pro powergrid % 
